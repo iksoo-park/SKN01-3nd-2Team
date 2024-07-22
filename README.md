@@ -129,10 +129,12 @@ SKN01-3nd-2Team
 
 3. Git Draft를 생성해 어떤 코드에서 오류가 났는지 발행 합니다.
 
-![image](https://github.com/user-attachments/assets/0a3e9503-4875-4fa6-9920-401704c34953)
-![image](https://github.com/user-attachments/assets/00609d21-3123-40ca-b2bb-e27e116302f2)
+![image](https://github.com/user-attachments/assets/9c807694-d291-4684-86fe-cef284b5853b)
+![image](https://github.com/user-attachments/assets/c0fbc536-c653-40be-9e2a-94573bd7891f)
 
-4. AWS, Docker, Git Action, ... 등으로 이루어진 이슈 발행 페이지에 등록 합니다.
+
+
+5. AWS, Docker, Git Action, ... 등으로 이루어진 이슈 발행 페이지에 등록 합니다.
 
 ![image](https://github.com/user-attachments/assets/405521ec-19cc-4cff-8538-dfcaba1ee13d)
 ![image](https://github.com/user-attachments/assets/db382336-ecb9-4c5e-9938-f83f50113281)
