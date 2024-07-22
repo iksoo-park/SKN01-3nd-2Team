@@ -52,12 +52,13 @@
 작은 것 같지만 이와 같은 것들이 쌓여서 아주 기민하고 민첩한 조직을 만들어 냅니다.
 ```
 
+
 # 4. Backend 애자일 보드 - 요구 사항 정의서
-
+![image](https://github.com/user-attachments/assets/53363352-02a4-463c-b12b-bb7056fd149c)
 # 5. Frontend 애자일 보드 - 화면 설계서
-
+![image](https://github.com/user-attachments/assets/cd868eb1-028e-4669-a2a4-7ec330c13f22)
 # 6. FastAPI 애자일 보드 - AI 서빙 설계서
-
+![image](https://github.com/user-attachments/assets/1f97bc1e-344d-48ac-bd0d-2f21d7164e42)
 # 7. 시스템 구성도
 
 # 8. Manual Deploy (수동 배포 진행 절차)
@@ -143,20 +144,6 @@
 </div>
 <br><br>
 
-# 12. 테스트 보고서 (CI 테스트 결과)
-
-# 13. Deploy Issue (배포 이슈)
-
-# 14. 한 줄 회고
-
-Vue-Frontend Agile Board
-![image](https://github.com/user-attachments/assets/cd868eb1-028e-4669-a2a4-7ec330c13f22)
-
-Django-Backend Agile Board
-![image](https://github.com/user-attachments/assets/53363352-02a4-463c-b12b-bb7056fd149c)
-
-FastAPI Agile Board
-![image](https://github.com/user-attachments/assets/1f97bc1e-344d-48ac-bd0d-2f21d7164e42)
 
 # 12. Deploy Issue (배포 이슈)
 
