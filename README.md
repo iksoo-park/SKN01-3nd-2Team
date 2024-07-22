@@ -117,7 +117,28 @@ SKN01-3nd-2Team
 # 11. Agile Board (애자일 보드)
 
 # 12. Deploy Issue (배포 이슈)
-이슈를 3단계로 
+
+1. Agile Board - Backlog Number - Issue에 오류를 발행 합니다.
+
+![image](https://github.com/user-attachments/assets/f4a25535-f814-49e6-8fe3-69faae7d9dc8)
+![image](https://github.com/user-attachments/assets/b23cc178-67df-4018-a257-d8a0375c7273)
+
+2. 이슈사항에 담당 부분으로 가서 해당 부분의 페이지 링크를 등록 합니다.
+   
+![image](https://github.com/user-attachments/assets/22db75b0-8533-4113-a4c3-1b26e226a76e)
+
+3. Git Draft를 생성해 어떤 코드에서 오류가 났는지 발행 합니다.
+
+![image](https://github.com/user-attachments/assets/0a3e9503-4875-4fa6-9920-401704c34953)
+![image](https://github.com/user-attachments/assets/00609d21-3123-40ca-b2bb-e27e116302f2)
+
+4. AWS, Docker, Git Action, ... 등으로 이루어진 이슈 발행 페이지에 등록 합니다.
+
+![image](https://github.com/user-attachments/assets/405521ec-19cc-4cff-8538-dfcaba1ee13d)
+![image](https://github.com/user-attachments/assets/db382336-ecb9-4c5e-9938-f83f50113281)
+![image](https://github.com/user-attachments/assets/05d574ca-2e9a-4c90-9214-6860027295e2)
+
+이슈를 발생시 Backlog Number를 등록하고 - 오류가 발생한 코드의 Draft 링크를 같이 발행했습니다.
 
 # 13. 한 줄 회고
 
