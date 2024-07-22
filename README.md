@@ -61,6 +61,8 @@
 ![image](https://github.com/user-attachments/assets/1f97bc1e-344d-48ac-bd0d-2f21d7164e42)
 # 7. 시스템 구성도
 
+![image](https://github.com/user-attachments/assets/a2891ce1-1373-44da-902a-35e717c17b62)
+
 # 8. Manual Deploy (수동 배포 진행 절차)
 
 ## Frontend (UI)
