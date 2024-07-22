@@ -132,15 +132,21 @@ SKN01-3nd-2Team
 ![image](https://github.com/user-attachments/assets/9c807694-d291-4684-86fe-cef284b5853b)
 ![image](https://github.com/user-attachments/assets/c0fbc536-c653-40be-9e2a-94573bd7891f)
 
-
-
-5. AWS, Docker, Git Action, ... 등으로 이루어진 이슈 발행 페이지에 등록 합니다.
+4. AWS, Docker, Git Action, ... 등으로 이루어진 이슈 발행 페이지에 등록 합니다.
 
 ![image](https://github.com/user-attachments/assets/405521ec-19cc-4cff-8538-dfcaba1ee13d)
 ![image](https://github.com/user-attachments/assets/db382336-ecb9-4c5e-9938-f83f50113281)
-![image](https://github.com/user-attachments/assets/05d574ca-2e9a-4c90-9214-6860027295e2)
+![Uploading image.png…]()
+
 
 이슈를 발생시 Backlog Number를 등록하고 - 오류가 발생한 코드의 Draft 링크를 같이 발행했습니다.
+
+5. 최종적으로 Slack에 알람이 전송되고 모두가 Issue를 확인 할 수 있습니다.
+
+![image](https://github.com/user-attachments/assets/3ef4b655-ef1f-4ea4-954c-435fbff83f10)
+![image](https://github.com/user-attachments/assets/dc52d4d4-58e9-421d-aaa4-ebf5c786c2dd)
+
+이렇게 5단계로 구성하여 이슈의 배포와 관리를 진행 했습니다.
 
 # 13. 한 줄 회고
 
