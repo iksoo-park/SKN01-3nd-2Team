@@ -61,6 +61,7 @@
 ![image](https://github.com/user-attachments/assets/25b51eae-fe48-4b46-be1a-d43a50781b1e)
 # 7. 시스템 구성도
 
+![image](https://github.com/user-attachments/assets/8ffdbe57-2073-4c69-a142-db8ecb1b5f08)
 ![image](https://github.com/user-attachments/assets/a2891ce1-1373-44da-902a-35e717c17b62)
 
 # 8. Manual Deploy (수동 배포 진행 절차)
