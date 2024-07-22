@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="https://capsule-render.vercel.app/api?type=waving&color=black&height=240&text=SKN01-2nd-4Team&animation=&fontColor=ffffff&fontSize=90" />
+    <img src="https://capsule-render.vercel.app/api?type=waving&color=black&height=240&text=SKN01-3nd-2Team&animation=&fontColor=ffffff&fontSize=90" />
 </div>
 <div align="center">
     <h1><span style="color:pink;">[OUR PROJECT]</span></h1>     
