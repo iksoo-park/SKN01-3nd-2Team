@@ -59,10 +59,10 @@
 ![image](https://github.com/user-attachments/assets/4c9d8bf5-b1e0-4971-8894-bf6672027cfc)
 # 6. FastAPI 애자일 보드 - AI 서빙 설계서
 ![image](https://github.com/user-attachments/assets/25b51eae-fe48-4b46-be1a-d43a50781b1e)
-# 7. 시스템 구성도
+# 7. 시스템(서비스) 구성도
 
 ![image](https://github.com/user-attachments/assets/8ffdbe57-2073-4c69-a142-db8ecb1b5f08)
-![image](https://github.com/user-attachments/assets/a2891ce1-1373-44da-902a-35e717c17b62)
+![image](https://github.com/user-attachments/assets/85c2c269-ea18-4b84-8f96-f085c161677a)
 
 # 8. Manual Deploy (수동 배포 진행 절차)
 
