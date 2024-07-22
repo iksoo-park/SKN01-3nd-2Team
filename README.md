@@ -54,11 +54,11 @@
 
 
 # 4. Backend 애자일 보드 - 요구 사항 정의서
-![image](https://github.com/user-attachments/assets/53363352-02a4-463c-b12b-bb7056fd149c)
+![image](https://github.com/user-attachments/assets/a08371e6-e09d-44e0-b81a-55681a0ce379)
 # 5. Frontend 애자일 보드 - 화면 설계서
-![image](https://github.com/user-attachments/assets/cd868eb1-028e-4669-a2a4-7ec330c13f22)
+![image](https://github.com/user-attachments/assets/4c9d8bf5-b1e0-4971-8894-bf6672027cfc)
 # 6. FastAPI 애자일 보드 - AI 서빙 설계서
-![image](https://github.com/user-attachments/assets/1f97bc1e-344d-48ac-bd0d-2f21d7164e42)
+![image](https://github.com/user-attachments/assets/25b51eae-fe48-4b46-be1a-d43a50781b1e)
 # 7. 시스템 구성도
 
 ![image](https://github.com/user-attachments/assets/a2891ce1-1373-44da-902a-35e717c17b62)
