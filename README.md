@@ -116,6 +116,15 @@ SKN01-3nd-2Team
 
 # 11. Agile Board (애자일 보드)
 
+Vue-Frontend Agile Board
+![image](https://github.com/user-attachments/assets/cd868eb1-028e-4669-a2a4-7ec330c13f22)
+
+Django-Backend Agile Board
+![image](https://github.com/user-attachments/assets/53363352-02a4-463c-b12b-bb7056fd149c)
+
+FastAPI Agile Board
+![image](https://github.com/user-attachments/assets/1f97bc1e-344d-48ac-bd0d-2f21d7164e42)
+
 # 12. Deploy Issue (배포 이슈)
 
 1. Agile Board - Backlog Number - Issue에 오류를 발행 합니다.
