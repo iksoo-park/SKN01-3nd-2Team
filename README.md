@@ -64,6 +64,31 @@
 # 8. Manual Deploy (수동 배포 진행 절차)
 
 ## Frontend (UI)
+### 1. Vue 코드 빌드 하기
+<img src="img/front_ci.png">
+
+### 2. scp 방식으로 pem키 보내기 
+<img src="img/scp.png">
+
+### 3. build 파일 웹 상에서 docker-compose up 실행
+<img src="img/vue_docker.png">
+
+## Backend (Server)
+
+### 1. 실행할 파일 권한 부여
+<img src="img/chmod.png">
+
+### 2. GHCR 로그인
+<img src="img/ghcr.png">
+
+### 3. 도커 이미지 생성
+<img src="img/docker_image_create.png">
+
+### 4. django 세팅들 도커 이미지에 빌드
+<img src="img/docker_image_build.png">
+
+### 5. build 파일 웹 상에서 docker-compose up 실행
+<img src="img/django_docker_compose.png">
 
 ## Backend (Server)
 
