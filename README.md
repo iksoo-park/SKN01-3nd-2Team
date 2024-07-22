@@ -136,8 +136,7 @@ SKN01-3nd-2Team
 
 ![image](https://github.com/user-attachments/assets/405521ec-19cc-4cff-8538-dfcaba1ee13d)
 ![image](https://github.com/user-attachments/assets/db382336-ecb9-4c5e-9938-f83f50113281)
-![Uploading image.png…]()
-
+![image](https://github.com/user-attachments/assets/718f8f4a-afb5-45c6-86d2-188165373c72)
 
 이슈를 발생시 Backlog Number를 등록하고 - 오류가 발생한 코드의 Draft 링크를 같이 발행했습니다.
 
