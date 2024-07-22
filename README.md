@@ -49,19 +49,15 @@
 작은 것 같지만 이와 같은 것들이 쌓여서 아주 기민하고 민첩한 조직을 만들어 냅니다.
 ```
 
-# 4. 데이터 수집 방식 (크롤링)
+# 4. Backend 애자일 보드 - 요구 사항 정의서
 
-# 5. Streamlit 애플리케이션 사용 방식
+# 5. Frontend 애자일 보드 - 화면 설계서
 
-# 6. Manual Deploy (수동 배포 진행 절차)
+# 6. FastAPI 애자일 보드 - AI 서빙 설계서
 
-## Frontend (UI)
+# 7. 시스템 구성도
 
-## Backend (Server)
-
-## FastAPI (AI Core Server)
-
-# 7. Autonomous Deploy (자동 배포 진행 절차)
+# 8. Manual Deploy (수동 배포 진행 절차)
 
 ## Frontend (UI)
 
@@ -69,9 +65,17 @@
 
 ## FastAPI (AI Core Server)
 
-# 8. Result (수행 결과)
+# 9. Autonomous Deploy (자동 배포 진행 절차)
 
-# 9. Tech Stack (기술 스택)
+## Frontend (UI)
+
+## Backend (Server)
+
+## FastAPI (AI Core Server)
+
+# 10. Result (수행 결과)
+
+# 11. Tech Stack (기술 스택)
 
 ### COMMUNICATION
 <div align="center">    
@@ -136,9 +140,11 @@
 </div>
 <br><br>
 
-# 10. 테스트 보고서 (CI 테스트 결과)
+# 12. 테스트 보고서 (CI 테스트 결과)
 
-# 11. Agile Board (애자일 보드)
+# 13. Deploy Issue (배포 이슈)
+
+# 14. 한 줄 회고
 
 Vue-Frontend Agile Board
 ![image](https://github.com/user-attachments/assets/cd868eb1-028e-4669-a2a4-7ec330c13f22)
