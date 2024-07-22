@@ -2,15 +2,24 @@
     <img src="https://capsule-render.vercel.app/api?type=waving&color=black&height=240&text=SKN01-3nd-2Team&animation=&fontColor=ffffff&fontSize=90" />
 </div>
 <div align="center">
+    <div align="center">
+<img width="600" alt="image" src="https://github.com/Jh-jaehyuk/Jh-jaehyuk.github.io/assets/126551524/7ea63fc3-95f0-44d5-a0f0-cf431cae34f1">
     <h2><strong>SK Networks Family AI Camp 과정 3차 프로젝트</strong></h2>     
     AI 활용 애플리케이션 개발 : AWS 기반 게시판 서비스
 </div>
 <br><br><br>
 
 # 1. Introduction Team (팀 소개)
-- 팀명 : <strong>어텐션 (ATTENTION)</strong>  
-- 팀원 : 이호준 박윤서 박주현 허우영
-<br><br>
+### ATT(Attention)
+| 이호준 | 박주현 | 허우영 | 박윤서 | 
+|:----------:|:----------:|:----------:|:----------:|
+| <img width="120px" src="https://github.com/user-attachments/assets/b0e3b670-7db2-4e58-88db-8cdfd33fb774" /> | <img width="120px" src="https://github.com/user-attachments/assets/d840f250-8388-4aad-adbc-a265d06369fc" /> | <img width="120px" src="https://github.com/user-attachments/assets/061ea4e0-9712-48f9-9635-ac667e1afca2" /> | <img width="120px" src="https://github.com/user-attachments/assets/9543563c-6dd5-46b9-8054-4e74bea76196" /> 
+|  [@HoJ00n2](https://github.com/HoJ00n2) | [@iksoo-park](https://github.com/iksoo-park/skn-1st)  | [@heowooyoung](https://github.com/heowooyoung) | [@Yoonseoparkk](https://github.com/Yoonseoparkk) |
+
+
+
+
+
 
 # 2. Introduction Project (프로젝트 개요)
 <div align="left">    
