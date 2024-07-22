@@ -104,8 +104,6 @@ SKN01-3nd-2Team
 </div>
 <br><br>
 
-<br><br>
-
 # 7. Agile Board (애자일 보드)
 
 # 8. Deploy Issue (배포 이슈)
