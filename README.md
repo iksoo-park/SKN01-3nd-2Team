@@ -92,19 +92,262 @@
 ### 5. build 파일 웹 상에서 docker-compose up 실행
 <img src="img/django_docker_compose.png">
 
-## Backend (Server)
-
 ## FastAPI (AI Core Server)
 
 # 9. Autonomous Deploy (자동 배포 진행 절차)
 
 ## Frontend (UI)
 
+### 1. 파일 빌드
+<img src="img/back_cd_build.png">
+
 ## Backend (Server)
+
+### 1. 파일 빌드
+<img src="img/back_cd_build.png">
+
+### 2. docker-compose.yml 파일 생성 
+<img src="img/dockercompose.png">
+
+### 3. init.sql 파일 생성
+<img src="img/initsql.png">
+
+### 4. docker-compose up build 명령어 실행
+
+### 5. Git Repository에 CI.yml 파일 생성
+    name: Django CI (Continuous Integration)
+
+    on:
+      push:
+        branches: ["main"]
+    
+    jobs:
+      build:
+        runs-on: ubuntu-latest
+
+    steps:
+    - name: Setup MySQL
+      uses: samin/mysql-action@v1
+      with:
+        character set server: 'utf8'
+        mysql database: ${{ secrets.DATABASE_NAME }}
+        mysql user: ${{ secrets.DATABASE_USER }}
+        mysql password: ${{ secrets.DATABASE_PASSWORD }}
+
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.10.5
+
+    - name: Check current directory
+      run: pwd
+
+    - name: List files in current directory
+      run: ls -la
+
+    - name: Cache pip
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+
+    - name: Install Dependencies
+      working-directory: ./att_project
+      run: |
+        if [ -f requirements.txt ]; then
+          python -m venv .venv
+          source .venv/bin/activate
+          pip install --upgrade pip
+          pip install -r requirements.txt
+        else
+          echo "requirements.txt not found"
+          exit 1
+        fi
+
+    - name: Create .env file for CI
+      working-directory: ./att_project
+      run: |
+        echo "CORS_ALLOWED_ORIGINS=${{ secrets.CORS_ALLOWED_ORIGINS }}" > .env
+        echo "CSRF_TRUSTED_ORIGINS=${{ secrets.CSRF_TRUSTED_ORIGINS }}" >> .env
+        echo "DATABASE_NAME=${{ secrets.DATABASE_NAME }}" >> .env
+        echo "DATABASE_USER=${{ secrets.DATABASE_USER }}" >> .env
+        echo "DATABASE_PASSWORD=${{ secrets.DATABASE_PASSWORD }}" >> .env
+        echo "DATABASE_HOST=127.0.0.1" >> .env
+        echo "DATABASE_PORT=3306" >> .env
+        echo "KAKAO_LOGIN_URL=${{ secrets.KAKAO_LOGIN_URL }}" >> .env
+        echo "KAKAO_CLIENT_ID=${{ secrets.KAKAO_CLIENT_ID }}" >> .env
+        echo "KAKAO_REDIRECT_URI=${{ secrets.KAKAO_REDIRECT_URI }}" >> .env
+        echo "KAKAO_TOKEN_REQUEST_URI=${{ secrets.KAKAO_TOKEN_REQUEST_URI }}" >> .env
+        echo "KAKAO_USERINFO_REQUEST_URI=${{ secrets.KAKAO_USERINFO_REQUEST_URI }}" >> .env
+        echo "REDIS_HOST=${{ secrets.REDIS_HOST }}" >> .env
+        echo "REDIS_PORT=${{ secrets.REDIS_PORT }}" >> .env
+        echo "REDIS_PASSWORD=${{ secrets.REDIS_PASSWORD }}" >> .env
+
+    - name: Wait for MySQL to be ready
+      working-directory: ./att_project
+      run: |
+        for i in {60..0}; do
+          if mysqladmin ping -h "127.0.0.1" --silent; then
+            break
+          fi
+          echo 'MySQL is unavailable - sleeping'
+          sleep 2
+        done
+
+        if [ "$i" = 0 ]; then
+          echo 'MySQL is still unavailable - exiting'
+          exit 1
+        fi
+        echo 'MySQL is up - continuning'
+
+    - name: Make migrations
+      working-directory: ./att_project
+      run: |
+        source .venv/bin/activate
+        python manage.py makemigrations
+
+    - name: Run migrate
+      working-directory: ./att_project
+      run: |
+        source .venv/bin/activate
+        python manage.py migrate --noinput
+
+    - name: Find test modules
+      working-directory: ./att_project
+      run: |
+        source .venv/bin/activate
+        chmod +x find_test.sh
+        TEST_MODULES=$(./find_test.sh)
+        echo "TEST_MODULES=$TEST_MODULES" >> $GITHUB_ENV
+
+    - name: Run Tests
+      working-directory: ./att_project
+      run: |
+        source .venv/bin/activate
+        python manage.py test $TEST_MODULES
+
+    - name: send BACKEND_TEST_FINISH_TRIGGER
+      run: |
+        curl -S -X POST https://api.github.com/repos/${{ github.repository }}/dispatches \
+            -H 'Accept: application/vnd.github.v3+json' \
+            -u ${{ secrets.GHCR_TOKEN }} \
+            -d '{"event_type": "BACKEND_TEST_FINISH_TRIGGER", "client_payload": { "repository": "'"$GITHUB_REPOSITORY"'" }}'
+
+### 6. Git Repository에 CD.yml 파일 생성
+    name: Django CD (Continuous Deploy)
+    
+    on:
+      repository_dispatch:
+        types: [BACKEND_TEST_FINISH_TRIGGER]
+    
+    jobs:
+      build:
+        name: build-app
+        runs-on: ubuntu-latest
+        steps:
+        - name: Checkout repository
+          uses: actions/checkout@v3
+
+    - name: Setup Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.10.5
+
+    - name: Install Dependencies
+      working-directory: ./att_project
+      run: |
+        if [ -f requirements.txt ]; then
+          python -m venv .venv
+          source .venv/bin/activate
+          pip install --upgrade pip
+          pip install -r requirements.txt
+        else
+          echo "requirements.txt not found"
+          exit 1
+        fi
+    - name: Grant execute permission for scripts
+      run: |
+        chmod +x att_project/wait-for-it.sh
+        chmod +x att_project/manage.py
+    
+    - name: Configure Docker
+      uses: docker/setup-buildx-action@v1
+
+    - name: Setup Docker BuildKit
+      run: |
+        echo "DOCKER_BUILDKIT=1" >> $GITHUB_ENV
+
+    - name: Login to GHCR
+      uses: docker/login-action@v1
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GHCR_TOKEN }}
+
+    - name: Build and Push Docker Image
+      run: |
+        cd att_project
+        docker buildx build --no-cache --platform linux/arm64 -f Dockerfile -t ghcr.io/${{ github.actor }}/att-django-backend-server:latest --push .
+
+      deploy:
+        needs: build
+        name: Deploy
+        runs-on: [ self-hosted, deploy-att-backend ]
+        steps:
+        - name: Get Github Actions IP
+          id: ip
+          uses: haythem/public-ip@v1.2
+      
+    - name: Configure AWS IAM Credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ap-northeast-2
+
+    - name: Add Github Actions IP to Security Group
+      run: |
+        aws ec2 authorize-security-group-ingress --group-id ${{ secrets.AWS_SG_ID }} --protocol tcp --port 22 --cidr ${{ steps.ip.outputs.ipv4 }}/32
+          
+    - name: Login to GHCR
+      uses: docker/login-action@v1
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GHCR_TOKEN }}
+
+    - name: Deploy to Production
+      uses: appleboy/ssh-action@v0.1.10
+      with:
+        host: ${{ secrets.HOST_IP }}
+        username: ec2-user
+        key: ${{ secrets.PRIVATE_KEY }}
+        script_stop: true
+        script: |
+            cd /home/ec2-user/att/django-backend
+            docker-compose down
+
+            echo ${{ secrets.GHCR_TOKEN }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+            docker pull ghcr.io/${{ github.actor }}/att-django-backend-server:latest
+
+            docker image prune -f
+            docker logout
+
+            docker-compose up -d
+
+    - name: Remove Github Actions IP From Security Group
+      run: |
+        aws ec2 revoke-security-group-ingress --group-id ${{ secrets.AWS_SG_ID }} --protocol tcp --port 22 --cidr ${{ steps.ip.outputs.ipv4 }}/32
 
 ## FastAPI (AI Core Server)
 
 # 10. Result (수행 결과)
+<img src="img/result1.png">
 
 # 11. Tech Stack (기술 스택)
 
