@@ -345,7 +345,7 @@
 ## FastAPI (AI Core Server)
 
 # 10. Result (수행 결과)
-<img src="img/result.png">
+<img src="img/result1.png">
 
 # 11. Tech Stack (기술 스택)
 
