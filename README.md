@@ -24,6 +24,8 @@ SKN01-3nd-2Team
 
 # 3. ERD 구성
 
+![image](https://github.com/user-attachments/assets/e06b9769-f005-4b39-a986-115a28408dea)
+
 # 4. 데이터 수집 방식 (크롤링)
 
 # 5. Streamlit 애플리케이션 사용 방식
@@ -115,6 +117,7 @@ SKN01-3nd-2Team
 # 11. Agile Board (애자일 보드)
 
 # 12. Deploy Issue (배포 이슈)
+이슈를 3단계로 
 
 # 13. 한 줄 회고
 
